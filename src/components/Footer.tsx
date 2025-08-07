@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Nutri Mariana</h3>
+            <h3 className="text-xl font-bold">Nutri Juliana</h3>
             <p className="text-health-secondary text-sm">
               Transformando vidas através da nutrição personalizada e cuidado integral com a saúde.
             </p>
@@ -50,7 +50,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold">Contato</h4>
             <ul className="space-y-2 text-sm text-health-secondary">
               <li>(11) 99999-9999</li>
-              <li>contato@nutrimariana.com.br</li>
+              <li>contato@nutriJuliana.com.br</li>
               <li>Rua das Flores, 123<br />Centro, São Paulo - SP</li>
             </ul>
           </div>
@@ -59,7 +59,7 @@ const Footer = () => {
         <div className="border-t border-health-primary/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-health-secondary">
-              © 2024 Nutri Mariana. Todos os direitos reservados.
+              © 2024 Nutri Juliana. Todos os direitos reservados.
             </p>
             <div className="flex items-center space-x-1 text-sm text-health-secondary">
               <span>Feito com</span>

@@ -67,8 +67,8 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-health-dark">E-mail</h4>
                     <p className="text-muted-foreground">
-                      contato@nutrimariana.com.br<br />
-                      agendamento@nutrimariana.com.br
+                      contato@nutriJuliana.com.br<br />
+                      agendamento@nutriJuliana.com.br
                     </p>
                   </div>
                 </div>
@@ -90,29 +90,6 @@ const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
-
-            <div className="bg-health-light rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-health-dark mb-4">
-                Tecnologias Utilizadas
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary" className="bg-health-primary/10 text-health-primary border-health-primary/20">
-                  React
-                </Badge>
-                <Badge variant="secondary" className="bg-health-primary/10 text-health-primary border-health-primary/20">
-                  Calendar API
-                </Badge>
-                <Badge variant="secondary" className="bg-health-primary/10 text-health-primary border-health-primary/20">
-                  Forms
-                </Badge>
-                <Badge variant="secondary" className="bg-health-primary/10 text-health-primary border-health-primary/20">
-                  TypeScript
-                </Badge>
-                <Badge variant="secondary" className="bg-health-primary/10 text-health-primary border-health-primary/20">
-                  Tailwind CSS
-                </Badge>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}

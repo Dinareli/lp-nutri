@@ -55,7 +55,7 @@ const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
                 src={nutritionistImage} 
-                alt="Nutricionista Mariana" 
+                alt="Nutricionista Juliana" 
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-health-primary/20 to-transparent"></div>

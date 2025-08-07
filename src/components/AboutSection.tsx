@@ -7,15 +7,15 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-health-dark">
-            Nutri Mariana
+            Nutri Juliana
           </h2>
           <p className="text-xl text-health-primary font-medium">
-            Nutricionista Clínica Especializada
+            Nutricionista Clínica e Esportiva
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Página de consulta nutricional com agendamento online e formulário de avaliação. 
-            Mais de 8 anos ajudando pessoas a transformarem sua relação com a alimentação 
-            e alcançarem seus objetivos de saúde.
+            Ajudando pessoas a transformarem sua relação com a alimentação 
+            e alcançarem seus objetivos de saúde!
           </p>
         </div>
 
