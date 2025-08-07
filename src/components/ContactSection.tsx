@@ -2,12 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { useState } from "react";
 
 const ContactSection = () => {
+  const [goal, setGoal] = useState<string>("");
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -124,17 +126,37 @@ const ContactSection = () => {
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-health-dark">Nome Completo</Label>
-                    <Input 
-                      id="name" 
+                    <Label htmlFor="fullName" className="text-health-dark">Nome completo</Label>
+                    <Input
+                      id="fullName"
                       placeholder="Seu nome completo"
                       className="border-health-secondary/30 focus:border-health-primary"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-health-dark">Telefone</Label>
-                    <Input 
-                      id="phone" 
+                    <Label htmlFor="email" className="text-health-dark">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="seu@email.com"
+                      className="border-health-secondary/30 focus:border-health-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="birthDate" className="text-health-dark">Data de nascimento</Label>
+                    <Input
+                      id="birthDate"
+                      type="date"
+                      className="border-health-secondary/30 focus:border-health-primary"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-health-dark">Telefone para contato</Label>
+                    <Input
+                      id="phone"
                       placeholder="(11) 99999-9999"
                       className="border-health-secondary/30 focus:border-health-primary"
                     />
@@ -142,46 +164,58 @@ const ContactSection = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-health-dark">E-mail</Label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="seu@email.com"
-                    className="border-health-secondary/30 focus:border-health-primary"
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="service" className="text-health-dark">Tipo de Consulta</Label>
-                    <Select>
-                      <SelectTrigger className="border-health-secondary/30 focus:border-health-primary">
-                        <SelectValue placeholder="Selecione o tipo" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="inicial">Consulta Inicial</SelectItem>
-                        <SelectItem value="retorno">Retorno/Acompanhamento</SelectItem>
-                        <SelectItem value="online">Consulta Online</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="date" className="text-health-dark">Data Preferida</Label>
-                    <Input 
-                      id="date" 
-                      type="date"
-                      className="border-health-secondary/30 focus:border-health-primary"
-                    />
-                  </div>
+                  <Label htmlFor="referral" className="text-health-dark">Como soube dos serviços</Label>
+                  <Select>
+                    <SelectTrigger className="border-health-secondary/30 focus:border-health-primary">
+                      <SelectValue placeholder="Selecione uma opção" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="google">Google</SelectItem>
+                      <SelectItem value="redes">Redes sociais</SelectItem>
+                      <SelectItem value="indicacao">Indicação</SelectItem>
+                      <SelectItem value="site">Site</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-health-dark">Mensagem (Opcional)</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Conte-nos um pouco sobre seus objetivos ou dúvidas..."
-                    className="border-health-secondary/30 focus:border-health-primary min-h-24"
-                  />
+                  <Label htmlFor="goal" className="text-health-dark">Objetivo da consulta</Label>
+                  <Select value={goal} onValueChange={setGoal}>
+                    <SelectTrigger className="border-health-secondary/30 focus:border-health-primary">
+                      <SelectValue placeholder="Selecione o objetivo" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="emagrecimento">Emagrecimento</SelectItem>
+                      <SelectItem value="ganho-massa">Ganho de massa muscular</SelectItem>
+                      <SelectItem value="qualidade-vida">Melhorar qualidade de vida</SelectItem>
+                      <SelectItem value="controle-doencas">Controle de doenças (ex.: diabetes, hipertensão)</SelectItem>
+                      <SelectItem value="outro">Outro</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {goal === "outro" && (
+                  <div className="space-y-2">
+                    <Label htmlFor="goalOther" className="text-health-dark">Descreva seu objetivo</Label>
+                    <Input
+                      id="goalOther"
+                      placeholder="Digite seu objetivo"
+                      className="border-health-secondary/30 focus:border-health-primary"
+                    />
+                  </div>
+                )}
+
+                <div className="space-y-2">
+                  <Label htmlFor="careType" className="text-health-dark">Tipo de atendimento</Label>
+                  <Select>
+                    <SelectTrigger className="border-health-secondary/30 focus:border-health-primary">
+                      <SelectValue placeholder="Selecione o tipo de atendimento" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="presencial">Presencial</SelectItem>
+                      <SelectItem value="online">Online</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <Button variant="health" size="lg" className="w-full text-lg py-6">
